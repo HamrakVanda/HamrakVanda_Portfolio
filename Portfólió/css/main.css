@@ -1,0 +1,283 @@
+body{
+	font-size: 16px;
+	font-family: 'Teko', sans-serif;
+	font-weight: 300;
+	background-color: lightgray;
+}
+*,*::before,*::after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+img{
+	max-width: 100%;
+}
+/*--Layout--*/
+	body{
+		display: grid;
+		grid-template-areas:
+		"fejlec"
+		"kontent"
+		"lablec"
+		;
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+	}
+
+	header{
+		
+		grid-area: fejlec;
+
+	}
+
+	main{
+		background-color: lightgray;
+		grid-area: kontent;
+	}
+
+	footer{
+		background-color: lightgray;
+		grid-area: lablec;
+	}
+
+/*--Layout_end--*/
+
+/*--Header--*/
+	header{
+		line-height: 2rem;
+		font-size: 2rem;
+		text-align: right;
+		padding: .75rem 1rem;
+		
+		position: -webkit-sticky;
+		position: fixed;
+		top: 0;
+
+	}
+
+	nav a{
+		position: relative;
+		left: -220px;
+		transition: 0.3s;
+		padding: 15px;
+		width: 250px;
+		height: 80px;
+		text-decoration: none;
+		font-size: 25px;
+		color: white;
+		border-radius: 0 0 10px 10px;
+		text-align: left;
+		font-family: 'Rubik Mono One', sans-serif;
+		margin: 1rem;
+		user-select: none;
+	}
+
+	nav a:hover{
+		left: -20px;
+		cursor: pointer;
+	}
+
+	nav a{
+		display: flex;
+		flex-direction: column;
+		background-color: black;
+		border-radius: 8px;
+	}
+
+/*--Header_end--*/
+
+/*--Main--*/
+	img.en{
+		
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%
+
+
+	}
+
+
+	img.en:hover{
+		animation: shake 0.5s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes shake{
+		0%{transform: translate(1px,1px) rotate(0deg);}
+		10%{transform: translate(-1px,-2px) rotate(-1deg);}
+		20%{transform: translate(-3px,0px) rotate(1deg);}
+		30%{transform: translate(3px,2px) rotate(0deg);}
+		40%{transform: translate(1px,-1px) rotate(1deg);}
+		50%{transform: translate(-1px,2px) rotate(-1deg);}
+		60%{transform: translate(-3px,1px) rotate(0deg);}
+		70%{transform: translate(3px,1px) rotate(-1deg);}
+		80%{transform: translate(-1px,-1px) rotate(1deg);}
+		90%{transform: translate(1px,2px) rotate(0deg);}
+		100%{transform: translate(1px,-2px) rotate(-1deg);}
+
+	}
+
+	.tartalom{
+
+		
+
+		text-align: center;
+		color: white;
+		font-size: 170px;
+		font-family: 'Rubik Mono One', sans-serif;
+		font-weight: 300;
+
+	}
+
+	h3{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-20%);
+		font-size: 100px;
+
+	}
+
+	h3.rolam{
+		display: block;
+		top: 40%;
+		position: relative;
+		bottom: 60%;
+		left: 63%;
+	}
+
+	h3.weboldal{
+		display: block;
+		top: 40%;
+		position: relative;
+		bottom: 60%;
+		left: 63%;
+	}
+
+
+	.kozepen{
+		position: relative;
+		top: 50%;
+		left: 63%;
+		transform: translate(-50%,20%);
+		font-size: 170px;
+
+	}
+
+	p{
+		text-align: left;
+		font-size: 50px;
+		margin: 2rem;
+		padding: 2rem;
+		left: 1rem;
+		top: 50%;
+		font-family: 'Titillium Web', sans-serif;
+		position: absolute;
+	}
+
+	/*.row{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 4px;
+		column-count: 4;
+	}
+
+	}
+
+	.column{
+		flex: 25%;
+		max-width: 25%;
+		padding: 0 4px;
+
+
+	}*/
+	p.pkezdolap{
+		position: absolute;
+		top: 90%;
+	}
+
+	.klikk{
+		font-family: 'Rubik Mono One', sans-serif;
+		font-size: 100px;
+		color: white;
+		width: 100%;
+		display: inline-block;
+		grid-area: klikk;
+	}
+
+	/*.column img{
+		margin-top: 8px;
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 800px){
+		.column{
+			flex: 50%;
+			max-width: 50%;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.column {
+			flex: 100%;
+			max-width: 100%;
+		}
+	}*/
+
+	.grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: .4rem 1rem;
+		grid-row: 4;
+		padding: 0 4px;
+		grid-template-areas: 
+		"kartya kartya kartya kartya"
+		"kartya klikk kartya kartya "
+		"kartya kartya karyta kartya"
+
+
+	}
+
+	.kep{
+		position: center;
+
+		max-width: 100%;
+		margin: 5rem;
+
+	}
+
+	.grid img{
+		margin-top: 8px;
+		margin-bottom: 4px;
+		vertical-align: middle;
+		width: 100%;
+		grid-area: kartya
+
+	}
+
+	@media screen and (max-width: 800px){
+		.grid{
+			flex: 50%;
+			max-width: 50%;
+		}
+		.kep{
+			flex:50%;
+			max-width: 50%;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.grid {
+			flex: 100%;
+			max-width: 100%;
+		}
+		.kep{
+			flex: 100%;
+			max-width: 100%;
+		}
+	}
+
+
+/*--Main_end--*/
